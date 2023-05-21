@@ -173,8 +173,6 @@ public class DataFileGraphics extends JPanel {
             System.out.println("No files found in the directory.");
         }
 
-        names.remove(names.remove(names.size()-1));
-
         System.out.println(names.size());
         for (String f:
              names) {
