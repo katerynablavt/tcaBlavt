@@ -12,18 +12,18 @@ public class State
 	public int    fNrOfLights;
 	public int [] positionsOfLights;
 
-	public int timeforred;
-	public int timeforgreen ;
+//	public int timeforred;
+//	public int timeforgreen ;
 	public int timeforredval =7;
-	public int timeforgreenval=3*timeforredval ;
+	public int timeforgreenval=timeforredval ;
 
 	public State(int nrOfCells, int nrOfLights)
 	{
 		fCells = new Cell[nrOfCells];
 		positionsOfLights=new int[nrOfLights];
 		fTime = 0;
-		timeforgreen=0;
-		timeforred=0;
+//		timeforgreen=0;
+//		timeforred=0;
 		fNrOfVehicles = 0;
 		fNrOfLights=nrOfLights;
 
@@ -42,8 +42,8 @@ public class State
 		positionsOfLights=new int[fNrOfLights];
 
 		fTime = 0;
-		timeforgreen=0;
-		timeforred=0;
+//		timeforgreen=0;
+//		timeforred=0;
 
 		fNrOfVehicles = 0;
 
@@ -353,8 +353,8 @@ public class State
 		}
 
 		state.fTime = fTime;
-		state.timeforgreen=timeforgreen;
-		state.timeforred=timeforred;
+//		state.timeforgreen=timeforgreen;
+//		state.timeforred=timeforred;
 		state.fNrOfVehicles = fNrOfVehicles;
 		state.fNrOfLights=fNrOfLights;
 		state.positionsOfLights=positionsOfLights;
@@ -377,28 +377,29 @@ public class State
 
 	public void updateLight(int timechangingequal) {
 
-			//частота перемикання
-			if ( timeforgreen==timechangingequal*timeforgreenval){
-				for (int i = 0; i < positionsOfLights.length; ++i) {
-					if(fCells[positionsOfLights[i]].color ==1) {
-						fCells[positionsOfLights[i]].color = 0;
-						timeforred=0;
-					}
-
-				}
-				timeforgreen=0;
+		for (Cell cell:fCells
+			 ) {
+			if(cell.tg==timechangingequal*timeforgreenval){
+				cell.tg=0;
+				cell.color=0;
 
 			}
-			if(timeforred==timeforredval){
-				for (int i = 0; i < positionsOfLights.length; ++i) {
-					if(fCells[positionsOfLights[i]].color ==0) {
-						fCells[positionsOfLights[i]].color = 1;
-						timeforgreen=0;
-					}
+			if(cell.tr==timeforredval){
+				cell.tr=0;
+				cell.color=1;
 
-				}
-				timeforred =0;
 			}
+		}
+	}
 
+	public void updatetimers() {
+		for (Cell cell:
+			 fCells) {
+			if(cell.color==1){
+				cell.tg++;
+			}else{
+				cell.tr++;
+			}
+		}
 	}
 }

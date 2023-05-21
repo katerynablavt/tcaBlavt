@@ -70,14 +70,14 @@ public class Allexperim
             filename += ("-groupGreen");
         }
 
-            filename+=
+            filename+="-sp" + String.valueOf(slowdownProbability) +
                         "-c" + String.valueOf(nrOfCells) +
                         "-s" + String.valueOf(nrOfDensitySteps) +
                         "-tp" + String.valueOf(transientPeriod) +
                         "-sp" + String.valueOf(simulationPeriod) +
                         "-ts" + String.valueOf(timeStepDuration) +
                         "-vmax" + String.valueOf(maxSpeed) +
-                        "-sp" + String.valueOf(slowdownProbability) +
+
 
                         "";
 

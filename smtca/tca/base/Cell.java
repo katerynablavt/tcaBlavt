@@ -12,6 +12,8 @@ public class Cell
 	public int fLightID; //-1 якщо нема
 	public int color; //-1 якщо нема, 0 червоний, 1 зелений
 
+	public int tg;
+	public int tr;
 
 	public Cell()
 	{
@@ -27,6 +29,8 @@ public class Cell
 		fVehicleLength = 1;
 		fLightID = -1;
 		color=-1;
+		tg=0;
+		tr=0;
 	}
 
 	public void copyTo(Cell cell)
@@ -38,5 +42,7 @@ public class Cell
 		cell.fVehicleLength = fVehicleLength;
 		cell.fLightID = fLightID;
 		cell.color=color;
+		cell.tg=tg;
+		cell.tr=tr;
 	}
 }

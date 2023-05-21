@@ -150,8 +150,7 @@ public class DataFileGraphics extends JPanel {
 
 
 //        URL packageUrl=classLoader.getResource("C:\\Users\\Owner\\Documents\\Downloads\\smtca-sourceCOPY\\");
-        String directoryPath = "C:\\Users\\Owner\\Documents\\Downloads\\smtca-sourceCOPY\\"; // Replace with the actual directory path
-
+        String directoryPath = "C:\\Users\\Owner\\Desktop\\tcaBlavt\\";
         // Create a File object for the directory
         File directory = new File(directoryPath);
 
@@ -188,13 +187,14 @@ public class DataFileGraphics extends JPanel {
             frame.setVisible(true);
             try {
                 // Get the size of the screen
+                Thread.sleep(2000);
                 Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
                 Robot robot = new Robot();
                 BufferedImage image = robot.createScreenCapture(new Rectangle(frame.getLocationOnScreen(), frame.getSize()));
                 File outputFile = new File("flow-"+f+".png");
                 ImageIO.write(image, "png", outputFile);
                 System.out.println("Diagram saved as image: " + outputFile.getAbsolutePath());
-                Thread.sleep(2000);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -210,13 +210,14 @@ public class DataFileGraphics extends JPanel {
             frame.setVisible(true);
             try {
                 // Get the size of the screen
+                Thread.sleep(2000);
                 Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
                 Robot robot = new Robot();
                 BufferedImage image = robot.createScreenCapture(new Rectangle(frame.getLocationOnScreen(), frame.getSize()));
                 File outputFile = new File("speed-"+f+".png");
                 ImageIO.write(image, "png", outputFile);
                 System.out.println("Diagram saved as image: " + outputFile.getAbsolutePath());
-                Thread.sleep(2000);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
