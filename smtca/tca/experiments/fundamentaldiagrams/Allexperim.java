@@ -126,6 +126,7 @@ public class Allexperim
             // allow transient period
             for (int timeStep = 0; timeStep < transientPeriod; ++timeStep) {
                 // advance cellular automaton one step
+                fTCA.fState.updateLight(timechatge);
                 fTCA.advanceOneStep();
 
             }
