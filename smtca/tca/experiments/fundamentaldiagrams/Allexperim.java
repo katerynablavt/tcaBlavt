@@ -16,7 +16,7 @@ public class Allexperim
 
         double timeStepDuration             = 1.2;
         int maxSpeed                        = 5;
-        double slowdownProbability          = 0.2;
+        double slowdownProbability          = 0.1;
 
         boolean distributeHomogeneously     = true;
         boolean saveGlobalDataIncrementally = true;

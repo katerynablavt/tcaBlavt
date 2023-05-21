@@ -74,8 +74,7 @@ public class TrafficCellularAutomaton
 
 		++nextState.fTime;
 		nextState.updatetimers();
-//		++nextState.timeforred;
-//		++nextState.timeforgreen;
+
 
 		fState = nextState;
 

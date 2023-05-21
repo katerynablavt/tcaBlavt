@@ -12,8 +12,6 @@ public class State
 	public int    fNrOfLights;
 	public int [] positionsOfLights;
 
-//	public int timeforred;
-//	public int timeforgreen ;
 	public int timeforredval =7;
 	public int timeforgreenval=timeforredval ;
 
@@ -22,8 +20,6 @@ public class State
 		fCells = new Cell[nrOfCells];
 		positionsOfLights=new int[nrOfLights];
 		fTime = 0;
-//		timeforgreen=0;
-//		timeforred=0;
 		fNrOfVehicles = 0;
 		fNrOfLights=nrOfLights;
 
@@ -40,13 +36,8 @@ public class State
 		int nrOfCells = fCells.length;
 		fCells = new Cell[nrOfCells];
 		positionsOfLights=new int[fNrOfLights];
-
 		fTime = 0;
-//		timeforgreen=0;
-//		timeforred=0;
-
 		fNrOfVehicles = 0;
-
 	}
 
 	public void distributeLights(int nrOfLights, boolean distributeHomogeneously, int clicking) {
@@ -69,7 +60,32 @@ public class State
 			positionsOfLights=new int[nrOfLights];
 			for (int lightNr = 0; lightNr < nrOfLights; lightNr++) {
 				fCells[lightPosition].fLightID = lightNr;
-				fCells[lightPosition].color = 1;
+
+				// fill cells
+
+					if (clicking==0) { //початку всі зелені
+						fCells[lightPosition].color = 1;
+					}
+					else if (clicking==1){ //рандомно
+						if (Math.random()<0.5) {
+							fCells[lightPosition].color = 1;
+						}else{
+							fCells[lightPosition].color = 0;
+						}
+					}else{ //по черзі по групках по 3 і 2
+						int inset = 5;
+						int g = 3;
+						int r= inset-g;
+						if (lightNr%5==1 ||lightNr%5==2||lightNr%5==3){
+							fCells[lightPosition].color = 1;
+						} else{
+							fCells[lightPosition].color = 0;
+						}
+
+					}
+
+
+
 				positionsOfLights[lightNr]=lightPosition;
 //				lightIDs.remove(lightNr);
 //todo how change
@@ -131,7 +147,6 @@ public class State
 					} else{
 						fCells[positions[i]].color = 0;
 					}
-
 
 				}
 
