@@ -5,9 +5,9 @@ import smtools.miscellaneous.*;
 import tca.automata.*;
 import tca.base.*;
 
-public class Allexperim
+public class AllExperiments
 {
-    public Allexperim(int nrLights, boolean homl, int timech, int cl, boolean local)
+    public AllExperiments(int nrLights, boolean homl, int timech, int cl, boolean local)
     {
         int nrOfCells        = 1000;
         int nrOfDensitySteps = 100;
@@ -16,7 +16,7 @@ public class Allexperim
 
         double timeStepDuration             = 1.2;
         int maxSpeed                        = 5;
-        double slowdownProbability          = 0.1;
+        double slowdownProbability          = 0.9;
 
         boolean distributeHomogeneously     = true;
         boolean saveGlobalDataIncrementally = true;
@@ -406,20 +406,20 @@ public class Allexperim
         int cl=0;
         boolean homl = true;
         boolean local = false;
-        Allexperim simulator1 = new Allexperim(nmOfLights,homl,timec3,cl,local);
-        Allexperim simulator2 = new Allexperim(nmOfLights,!homl,timec3,cl,local);
-        Allexperim simulator3 = new Allexperim(nmOfLights,homl,timec7,cl,local);
-        Allexperim simulator4 = new Allexperim(nmOfLights,!homl,timec7,cl,local);
+        AllExperiments simulator1 = new AllExperiments(nmOfLights,homl,timec3,cl,local);
+        AllExperiments simulator2 = new AllExperiments(nmOfLights,!homl,timec3,cl,local);
+        AllExperiments simulator3 = new AllExperiments(nmOfLights,homl,timec7,cl,local);
+        AllExperiments simulator4 = new AllExperiments(nmOfLights,!homl,timec7,cl,local);
         cl++;
-        Allexperim simulator11 = new Allexperim(nmOfLights,homl,timec3,cl,local);
-        Allexperim simulator21= new Allexperim(nmOfLights,!homl,timec3,cl,local);
-        Allexperim simulator31 = new Allexperim(nmOfLights,homl,timec7,cl,local);
-        Allexperim simulator41 = new Allexperim(nmOfLights,!homl,timec7,cl,local);
+        AllExperiments simulator11 = new AllExperiments(nmOfLights,homl,timec3,cl,local);
+        AllExperiments simulator21= new AllExperiments(nmOfLights,!homl,timec3,cl,local);
+        AllExperiments simulator31 = new AllExperiments(nmOfLights,homl,timec7,cl,local);
+        AllExperiments simulator41 = new AllExperiments(nmOfLights,!homl,timec7,cl,local);
         cl++;
-        Allexperim simulator12 = new Allexperim(nmOfLights,homl,timec3,cl,local);
-        Allexperim simulator22= new Allexperim(nmOfLights,!homl,timec3,cl,local);
-        Allexperim simulator32 = new Allexperim(nmOfLights,homl,timec7,cl,local);
-        Allexperim simulator42 = new Allexperim(nmOfLights,!homl,timec7,cl,local);
+        AllExperiments simulator12 = new AllExperiments(nmOfLights,homl,timec3,cl,local);
+        AllExperiments simulator22= new AllExperiments(nmOfLights,!homl,timec3,cl,local);
+        AllExperiments simulator32 = new AllExperiments(nmOfLights,homl,timec7,cl,local);
+        AllExperiments simulator42 = new AllExperiments(nmOfLights,!homl,timec7,cl,local);
 
     }
 }
